@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Responsive Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav id="home-click" class="flex-head">
+      <div class="head-name">Student Name</div>
+      <div class="head-item" id="one"><a href="#home-click">HOME</a></div>
+      <div class="head-item" id="two"><a href="#port-click">PORTFOLIO</a></div>
+      <div class="head-item" id="three"><a href="#skills-click">SKILLS</a></div>
+      <div class="head-item" id="four"><a href="#contact-click">CONTACT</a></div>
+    </nav>
+    <div class="hero-wrapper">
+      <div class="prof-pic">
+        <img alt="profile picture" src="images/responsive-layout-profile.png">
+      </div>
+      <div class="about-me">
+        <p>
+        Hi! I'm a front-end developer who loves responsive design and css.
+        I recently finished learning front-end web development at Treehouse
+        and am excited to put all my skills to use!
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="port-click" class="head-two">
+      <h2>PORTFOLIO</h2>
+    </div>
+    <div class="main-wrapper">
+      <div class="main-item-1">
+        <img alt="marketing page" src="images/portfolio-1.png">
+        <div class="col-content">
+          <h2>Marketing Page</h2>
+          <p>This project shows the front page of a marketing website meant for a specific business I'm interested in.</p>
+        </div>
+      </div>
+      <div class="main-item-2">
+        <img alt="search page" src="images/portfolio-2.png">
+        <div class="col-content">
+          <h2>Search Page</h2>
+          <p>This project searches through a specific database to find information that the user is trying to look up.</p>
+        </div>
+      </div>
+      <div class="main-item-3">
+        <img alt="travel app" src="images/portfolio-3.png">
+        <div class="col-content">
+          <h2>Travel App</h2>
+          <p>This project compares travel times based on different transportation methods and tells you the best one.</p>
+        </div>
+      </div>
+      <div class="main-item-4">
+        <img alt="map" src="images/portfolio-4.png">
+        <div class="col-content">
+          <h2>Map of Favorite Spots</h2>
+          <p>This project uses mapping apis to plot points for my favorite spots in the city for a do-it-yourself walking tour.</p>
+        </div>
+      </div>
+      <div class="main-item-5">
+        <img alt="photo gallery" src="images/portfolio-5.png">
+        <div class="col-content">
+          <h2>Photo Gallery</h2>
+          <p>This project shows pictures from a recent trip to the viewer and allows them to easily navigate through photos.</p>
+        </div>
+      </div>
+      <div class="main-item-6">
+        <img alt="Calculator" src="images/portfolio-6.png">
+        <div class="col-content">
+          <h2>Calculator</h2>
+          <p>Someone can enter in the numbers they want, and press the big blue button and get the result.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="skills-click" class="head-two">
+      <h2>Skills</h2>
+    </div>
+    <div class="skills">
+      <ul>
+        <li>Javascript</li>
+        <li>CSS</li>
+        <li>HTML</li>
+        <li>C</li>
+        <li>Java</li>
+        <li>Photoshop</li>
+        <li>Lightroom</li>
+        <li>XD</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <div id="contact-click" class="contact">
+    <h3>CONTACT</h3>
+      <p>If you're interested in chatting or want more information about what I've been working on, I'd love to hear from you!</p>
+      <p>Phone  <b>+1 (111) 555-1234</b></p>
+      <p>Email  <b>email@yoursite.com</b></p>
+    </div>
+    <hr>
+    <div class="bottom-bar">
+      <span class="bottom-name">Student Name</span>
+      <span class="back-to-top"><a href="#home-click">BACK TO TOP</a></span>
+      <span class="bottom-home"><a href="#home-click">HOME</a></span>
+      <span class="bottom-port"><a href="#port-click">PORTFOLIO</a></span>
+      <span class="bottom-skills"><a href="#skills-click">SKILLS</a></span>
+      <span class="bottom-contact"><a href="#contact-click">CONTACT</a></span>
+    </div>
+  </footer>
+</body>
+
+</html>

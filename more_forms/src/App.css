@@ -1,0 +1,33 @@
+.container {
+  text-align: center;
+}
+
+form {
+  width: 500px;
+  margin: auto;
+}
+
+.input, select {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: rgb(212, 211, 211);
+}
+
+label {
+  width: 34%;
+  display: inline-block;
+}
+
+.data {
+  display: inline-block;
+  width: 67%;
+}
+
+h3 {
+  text-align: center;
+}

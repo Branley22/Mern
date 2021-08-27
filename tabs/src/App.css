@@ -1,0 +1,28 @@
+.selectedTab {
+  color: white;
+  background-color: blue;
+  border: 2px solid black;
+}
+
+.nonselectedTab {
+  color: red;
+  background-color: red;
+  border: 2px solid red;
+}
+
+.tab {
+  text-align: center;
+  display: inline-block;
+  margin: 2px;
+  padding: 10px 20px;
+}
+
+.App {
+  text-align: center;
+}
+
+.display {
+  border: 2px solid black;
+  margin-top: 23px;
+  font-size: 23px;
+}

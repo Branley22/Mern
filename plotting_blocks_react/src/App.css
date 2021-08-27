@@ -1,0 +1,43 @@
+.App {
+  border: 2px solid black;
+  background-color: #dddddd;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.header {
+  border: 2px solid black;
+  background-color: #6aa84f;
+  width: 97%;
+  height: 70px;
+  margin: 10px;
+  display: block;
+} 
+
+.section2 {
+  display: flex;
+}
+ .navigation {
+  border: 2px solid black;
+  background-color: #6fa8dc;
+  width: 20%;
+  height: 300px;
+  margin: 10px;
+  display: flex;
+} 
+
+.main {
+  border: 2px solid black;
+  background-color: #e06666;
+  width: 75%;
+  height: 400px;
+  margin: 10px;
+  display: flex;
+}
+
+.subcontents {
+  background-color: #ffd966;
+  margin-bottom: 23px;
+  width: 100%;
+}
