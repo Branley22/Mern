@@ -10,6 +10,7 @@ function App() {
       .then((res) => {
         console.log(res);
         setPokemon(res.data.results)
+        // changing something
     })
     .catch((err)=>console.log(err))
     
