@@ -3,14 +3,15 @@ import './App.css';
 
 import {Router} from '@reach/router';
 import Home from './Components/Home';
+import WordComponent from './Components/WordComponent';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Home path="/home" />
-        <Home path="/:word" />
-        <Home path="/:word/:font/:bcolor" />
+        <WordComponent path="/:word"/>
+        <WordComponent path="/:word/:color/:bgColor"/>
       </Router>
     </div>
   );
