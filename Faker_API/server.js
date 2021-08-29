@@ -55,6 +55,7 @@ app.get("/api/users/new", (req, res) => {
   res.json(newUser);
 });
 
+
 app.get("/api/companies/new", (req, res) => {
   const newCompany = createCompany();
   console.log("new company:");
@@ -62,6 +63,7 @@ app.get("/api/companies/new", (req, res) => {
 
   res.json(newCompany);
 });
+
 
 app.get("/api/user/company", (req, res) => {
   const newUser = createUser();
@@ -75,5 +77,8 @@ app.get("/api/user/company", (req, res) => {
 
   res.json({ user: newUser, company: newCompany });
 });
+
+
+
 
 app.listen(8000, () => console.log("Listening on port 8000"));
