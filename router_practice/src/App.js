@@ -9,12 +9,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-
         <Home path="/"/>
         <DisplayOne path="/country/:countryCode"/>
         <DisplayOne path="/country/:countryCode/:rating"/>
         <DisplayOne path="/country/:countryCode/:rating/:review"/>
-        
       </Router>
     </div>
   );
