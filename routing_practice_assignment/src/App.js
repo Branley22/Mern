@@ -9,9 +9,11 @@ function App() {
   return (
     <div className="App">
       <Router>
+
         <Home path="/home" />
         <WordComponent path="/:word"/>
         <WordComponent path="/:word/:color/:bgColor"/>
+        
       </Router>
     </div>
   );
