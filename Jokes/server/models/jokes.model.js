@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
 
 const JokeSchema = new mongoose.Schema({
-  name: {
+  jokeQuestion: {
     type: String
-  }
+  },
+  jokeResponse: {
+    type: String
+  },
 }, {timestamps: true})
 // timestamps automatically create "createAt" and "updateAt" date and time for each document
 // each time a doc is updated it will change the "updatedAt"

@@ -2,6 +2,7 @@
 const joke = require("../models/jokes.model");
 
 module.exports = {
+
   //get all jokes from collection
   findAllJokes: (req,res) => {
     console.log("All the jokes!");
@@ -13,27 +14,34 @@ module.exports = {
     })
     .catch((err) => {
       console.log("Getting all jokes failed!");
-      console.log(err);
+      res.status(400).json(err);
     })
   },
 
   createNewJoke: (req,res) => {
     joke.create(req.body)
-    .then((newJoke)=> res.json({Joke: newJoke}))
-    .catch((err)=> status.error(err))
+    .then((newJoke)=> res.json({newJoke}))
+    .catch((err)=> {
+      console.log("Create jokes failed");
+      res.status(400).json(err)
+    })
   },
 
   findOneJoke: (req,res) => {
+    //id will come to use from the param/url/route call
     joke.findOne({_id: req.params.id})
     .then((oneJoke)=>res.json(oneJoke))
-    .catch((err)=> status.error(err))
+    .catch((err)=> {
+      console.log("Find one joke failed")
+      res.status(400).json(err)
+    })
   },
 
   updateJoke: (req,res) => {
     joke.findOneAndUpdate(
       {_id: req.params.id},
       req.body,
-      {new: true, runValidators: true }
+      { new: true, runValidators: true }
     )
     .then(updateJoke => res.json({Joke: updateJoke}))
     .catch(err => res.json({ message: "something is wrong", error: err}));
@@ -41,7 +49,7 @@ module.exports = {
 
   deleteJoke: (req,res) => {
     joke.deleteOne({_id: req.params.id})
-    .then((deleteJoke)=>res.json({delete: deleteJoke}))
-    .catch((err)=> res.json({message: "erros in deleting joke", error:err}))
+    .then((deletedJoke)=>res.json({deleted: deletedJoke}))
+    .catch((err)=> res.json({message: "erros in deleting joke", error: err}))
   }
 }
