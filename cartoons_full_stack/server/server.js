@@ -13,4 +13,4 @@ app.use(cors({
 
 
 app.listen(8000, () => 
-console.log("Ypu have successfully connected to port 8000"));
+console.log("You have successfully connected to port 8000"));
