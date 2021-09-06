@@ -2,6 +2,7 @@ const Cartoon = require("../models/cartoon.model");
 
 //get all documents from the "cartoons" collection and return an array of "cartoon" documents
 module.exports = {
+  //GET call
   findAllCartoons: (req, res) => {
     console.log("All the cartoons");
     //use the model to connect to the collection and find all documents
@@ -15,8 +16,9 @@ module.exports = {
     })
   },
 
+  //GET call
   findOneCartoon: (req, res) => {
-    Cartoon.findOne({id: req.params.id})
+    Cartoon.findOne({_id: req.params.id})
     .then((oneCartoon)=>res.json(oneCartoon))
     .catch((err)=>{
       console.log("finding one cartoon failed");
@@ -24,6 +26,7 @@ module.exports = {
     })
   },
 
+  //POST call
   createNewCartoon: (req,res) => {
     Cartoon.create(req.body)
     .then((newCartoon)=>res.json({newCartoon}))
@@ -32,6 +35,8 @@ module.exports = {
       res.status(400).json(err)
     })
   },
+
+  //PUT call
   updateCartoon: (req, res) => {
     Cartoon.findOneAndUpdate(
       {_id: req.params.id },
@@ -42,6 +47,7 @@ module.exports = {
     .catch(err=>res.json({ message: "Something went wrong", error: err}));
   }, 
    
+  //DEL call
   deleteCartoon: (req, res)=> {
     Cartoon.deleteOne({_id: req.params.id})
     .then((deletedCartoon)=>res.json({deletedCartoon}))

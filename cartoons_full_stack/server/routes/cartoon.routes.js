@@ -7,7 +7,7 @@ module.exports = (app) => {
   app.get('/api/cartoons', CartoonController.findAllCartoons);
 // if data is being sent to my server to create something use a POST request
   app.post('/api/cartoons', CartoonController.createNewCartoon);
-  app.get('/api/cartoons/:id', cartoonController.findOneCartoon);
+  app.get('/api/cartoons/:id', CartoonController.findOneCartoon);
   app.put('/api/cartoons/:id', CartoonController.updateCartoon);
   app.delete('/api/cartoons/:id', CartoonController.deleteCartoon);
 }
