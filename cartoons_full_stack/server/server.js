@@ -8,8 +8,8 @@ app.use(cors({
   origin: 'http://localhost:3000'
 }))
 
-// require("./config/mongoose.config");
-// require("./routes/cartoon.routes")(app);
+require("./config/mongoose.config");
+require("./routes/cartoon.routes")(app);
 
 
 app.listen(8000, () => 
