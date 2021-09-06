@@ -8,11 +8,12 @@ const ProductForm = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8000/api/product', {
+    axios.post('http://localhost:8000/api/products', {
       title,
       price,
       description
     })
+    
     .then(res=>console.log(res))
     .catch(err=>console.log(err))
   }

@@ -1,6 +1,6 @@
 const Product = require('../models/product.model');
 module.exports.index = (req, res) => {
-  response.json({
+  res.json({
      message: "Hello World"
   });
 }
