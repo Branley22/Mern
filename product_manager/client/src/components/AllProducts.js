@@ -35,6 +35,9 @@ const AllProducts = (props)=>{
               <p>{product.price}</p>
               <p>{product.description}</p>
               </Link>
+              <Link to={`/products/edit/${product._id}`}>
+              Edit
+              </Link>
               <DeleteProduct productList={productList} setProductList={setProductList} id={product._id}/>
             </div>
           ))

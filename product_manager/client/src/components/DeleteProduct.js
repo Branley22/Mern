@@ -17,7 +17,12 @@ const DeleteProduct = (props)=>{
     axios.delete(`http://localhost:8000/api/products/${id}`)
     .then((res)=>{
       console.log(res.data)
+      if(productList){
       deleteFilter(id);
+      }
+      else{
+        navigate('/');
+      }
     })
     .catch((err)=>console.log(err))
   }
