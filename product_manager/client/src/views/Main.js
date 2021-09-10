@@ -13,13 +13,9 @@ const Main = () => {
       setLoaded(true);
     })
   },[])
-  // const createProduct = id => {
-  //   axios.post("http//localhost:8000/api/products", id)
-  //   .then(res=> {
-  //     setProductItem([...productItem,res.data])
-  //   })
-  //   .catch(err => console.log("I am here",err))
-  // }
+
+
+  
   return (
     <div>
       <ProductForm/>
