@@ -25,7 +25,7 @@ module.exports = {
   
     createNewProduct: (req, res) => {
       Product.create(req.body)
-      .then(newProduct=>res.json({newProduct}))
+      .then(newProduct=>res.json(newProduct))
       .catch((err) => {
         console.log("create product failed");
         res.status(400).json(err)
@@ -38,12 +38,18 @@ module.exports = {
         req.body,
         { new: true, runValidators: true }
       )
-        .then(updateProduct => res.json({ updateProduct }))
-        .catch((err)=> res.json({message: "error updating Product", error: err}));
-      },
+        .then(updatedProduct => res.json(updatedProduct))
+        .catch((err)=> {
+        console.log("update product failed");
+        res.status(400).json(err)
+      })
+    },
 
       deleteProduct: (req, res) => {
         Product.deleteOne({_id: req.params.id})
-        .then((deletedProduct)=>res.json({ deletedProduct }))
-        .catch((err)=>res.json({message: "error deleting Product", error:err}))
-      }}
+        .then((deletedProduct)=>res.json(deletedProduct))
+        .catch((err)=> {
+        console.log("delete product failed");
+        res.status(400).json(err)
+      })
+  }}

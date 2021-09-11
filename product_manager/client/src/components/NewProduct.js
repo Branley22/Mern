@@ -5,6 +5,7 @@ import Form from '../components/Form';
 
 const NewProduct = (props)=>{
 
+  const [errors, setErrors] = useState({});
   const [newProduct, setNewProduct] = useState({
     title:"",
     price:"",
@@ -17,12 +18,17 @@ const NewProduct = (props)=>{
     //request's body that the backend is asking for (controller)
     newProduct
     )
-    .then((res=>{
+    .then((res)=>{
       console.log(res);
       console.log(res.data);
       //redirection, no reload, just rerender
       navigate("/products");
-    }))
+    })
+    .catch((err)=> {
+    console.log(err);
+    console.log(err.response.data.errors);
+    setErrors(err.response.data.errors);
+    })
   }
 
 
@@ -32,7 +38,8 @@ const NewProduct = (props)=>{
       submitHandler={newSubmitHandler} 
       buttonText="Add New Product"
       product={newProduct}
-      setProduct={setNewProduct}/>
+      setProduct={setNewProduct}
+      errors={errors}/>
     </div>
   )
 }

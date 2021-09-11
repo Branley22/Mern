@@ -5,6 +5,7 @@ import Form from '../components/Form';
 
 const EditProduct = (props)=>{
 
+  const [errors, setErrors] = useState({});
   const [editedProduct, setEditedProduct] = useState({
     title:"",
     price:"",
@@ -19,6 +20,8 @@ const EditProduct = (props)=>{
     })
     .catch((err)=>{
       console.log(err);
+      console.log(err.response.data.errors);
+      setErrors(err.response.data.errors);
     })
   },[])
 
@@ -43,7 +46,8 @@ const EditProduct = (props)=>{
       submitHandler={EditProductHandler} 
       buttonText="Update Product"
       product={editedProduct}
-      setProduct={setEditedProduct}/>
+      setProduct={setEditedProduct}
+      errors={errors}/>
     </div>
   )
 }

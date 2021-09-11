@@ -7,8 +7,8 @@ const ProductSchema = new mongoose.Schema({
         required: [true, "A product title is required"],
     },
     price: { 
-        type: String,
-        required: [true, "Nothing is free, price is required"]
+        type: Number,
+        required: [true, "Must be a number"],
     },
     description : { type: String }
 }, { timestamps: true });
