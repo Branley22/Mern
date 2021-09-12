@@ -11,15 +11,13 @@ const PetSchema = new mongoose.Schema({
     required: [true, "A pet type is required"],
     minlength: [3, "A pet type must be atleast three characters long"],
     enum:[
-      "Pitbull",
-      "Husky",
-      "Bulldog",
-      "Poodle",
-      "Golden Retriever",
-      "German Shepherd",
-      "Beagle",
-      "German Shepherd",
-      "Border Collie"
+      "Dog",
+      "Cat",
+      "Parrot",
+      "Wolf",
+      "Fish",
+      "Fox",
+      "Lion",
     ]
   },
   description:{
@@ -27,10 +25,14 @@ const PetSchema = new mongoose.Schema({
     required: [true, "A pet description is required"],
     minlength: [3, "A pet description must be atleast three characters long"],
   },
-  skills:{
-    type: String,
-    minlength: [0, "Pet skills needed"],
-    minlength: [3, "no more than 3 skills per pet"]
+  skill1:{
+    type: String
+  },
+  skill2:{
+    type: String
+  },
+  skill3:{
+    type: String
   }
 }, {timestamps: true})
 
