@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li,button {
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+li {
+  list-style: none;
+
+}
+
+a {
+  text-decoration: underline;
+  color: blue;
+}
+
+label {
+  display: block;
+  /* margin: auto; */
+  text-align: left;
+  font-size: 35px;
+}
+
+input {
+  width: 370px;
+  padding: 5px;
+  margin: 10px auto;
+  border: 3px solid black;
+  margin-bottom: 40px;
+}
+
+form {
+  padding: 20px;
+  margin: 20px;
+  border: 5px solid black;
+  height: 450px;
+}
+
+.new-pet-container {
+  display: flex;
+}
+
+.new-pet-section2 {
+  margin-left: 50px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 0 auto;
+}
+
+.add-petbtn {
+  background-color: blue;
+  box-shadow: 5px 5px 5px 0px black;
   color: white;
+  width: 250px;
+  padding: 1px;
+  font-size: 25px;
+  margin-bottom: 90px;
 }
 
-.App-link {
-  color: #61dafb;
+.detail-container {
+  border: 5px solid black;
+  font-size: 20px;
+  padding: 1px;
+  display: block;
+  text-align: left;
+  height: 400px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.detail-container p {
+  padding: 23px;
 }
+
+.adoptbtn-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.adoptbtn {
+  background-color: red;
+  box-shadow: 5px 5px 5px 0px black;
+  width: 250px;
+  color: white;
+  font-size: 25px;
+}
+
+.allpet-container {
+  padding: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 630px;
+}
+
+th, td {
+  width: 200px;
+  padding: 5px;
+  border: .5px solid black;
+  text-align: left;
+}
+
+th {
+  background-color: rgb(202, 201, 201);
+}
+
+
+
