@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
 import Form from '../component/Form';
+import Header from '../component/Header';
 
 const EditAuthor = (props)=>{
 

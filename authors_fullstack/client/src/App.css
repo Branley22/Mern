@@ -12,6 +12,7 @@ ul{
   display: flex;
   justify-content: space-around;
   list-style: none;
+  text-align: left;
 }
 
 label{
@@ -32,8 +33,15 @@ form {
   margin: 10px;
 }
 
-.listItem{
-  text-align: center;
-  border-bottom: 4px double lightgrey;
-  margin: 20px
+table {
+  text-align: left;
+  width: 400px;
+  border-collapse: collapse;
+}
+
+th, td {
+  width: 200px;
+  padding: 5px;
+  text-align: left;
+  border: .5px solid black;
 }

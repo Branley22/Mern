@@ -20,23 +20,36 @@ const AllAuthors = (props)=>{
 
   return(
     <div>
-      <h1>
-        Favorite Authors
-      </h1>
+      <h1>Favorite Authors</h1>
+      <p style={{color:"purple"}}>We have quotes by:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Author</th>
+            <th>Actions avaiable</th>
+          </tr>
+        </thead>
+      </table>
       {
         authorList.map((author,index)=>(
           <div className="listItem "key={index}>
-            <Link to={`/authors/${author._id}`}>
-              <p>{author.name}</p>
-            </Link>
-            <Link to={`/authors/edit/${author._id}`}>
-              Edit 
-            </Link>
-            <DeleteAuthor 
-            authorList = {authorList}
-            setAuthorList = {setAuthorList}
-            id={author._id}
-            />
+            <table>
+              <thead>
+                <tr>
+                  <td>{author.name}</td>
+                  <td>
+                  <DeleteAuthor 
+                  authorList = {authorList}
+                  setAuthorList = {setAuthorList}
+                  id={author._id}
+                  /> |
+                  <Link to={`/authors/edit/${author._id}`}>
+                    Edit 
+                  </Link>
+                  </td>
+                </tr>
+              </thead>
+            </table>
           </div>
         ))
       }
