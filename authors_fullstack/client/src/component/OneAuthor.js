@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
+import DeleteAuthor from './DeleteAuthor';
 
 const OneAuthor = (props)=>{
 
@@ -9,6 +10,7 @@ const OneAuthor = (props)=>{
   useEffect(()=>{
     axios.get(`http://localhost:8000/api/authors/${props.id}`)
     .then((res)=>{
+      console.log(res);
       console.log(res.data);
       setOneAuthor(res.data)
     })
@@ -16,9 +18,12 @@ const OneAuthor = (props)=>{
       console.log(err);
     })
   },[])
+
+
   return(
     <div>
-      OneAuthor
+      <p>{oneAuthor.name}</p>
+      <DeleteAuthor id={oneAuthor}/>
     </div>
   )
 }

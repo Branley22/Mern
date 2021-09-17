@@ -5,6 +5,7 @@ import Header from './component/Header';
 import AllAuthors from './component/AllAuthors';
 import NewAuthor from  './component/NewAuthor';
 import OneAuthor from './component/OneAuthor';
+import EditAuthor from './component/EditAuthor';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <AllAuthors default path='/authors'/>
         <NewAuthor path='/authors/new/'/>
         <OneAuthor path='/authors/:id'/>
+        <EditAuthor path='/authors/edit/:id'/>
       </Router>
     </div>
   );

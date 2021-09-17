@@ -1,20 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
+import Form from '../component/Form';
 
 const NewAuthor = (props)=>{
 
+  const [errors, setErrors] = useState({});
   const [NewAuthor, setNewAuthor] = useState({
     name:""
   })
-
-  const newChangeHandler = (e)=>{
-    let newStateObject = {...NewAuthor};
-    NewAuthor.name = e.target.value;
-    newStateObject[e.target.name] = e.target.value;
-    console.log(e.target.name, e.target.value);
-    setNewAuthor(newStateObject);
-  }
 
   const newSubmitHandler = (e)=>{
     e.preventDefault();
@@ -23,19 +17,23 @@ const NewAuthor = (props)=>{
     )
     .then((res)=>{
       console.log(res.data);
-      navigate('/authors');
+      navigate('/authors/');
+    })
+    .catch((err)=>{
+      console.log(err);
+      console.log(err.response.data.errors);
+      setErrors(err.response.data.errors);
     })
   }
 
   return(
     <div>
-      <form onSubmit={newSubmitHandler}>
-        <div>
-          <label htmlFor="">Author Name:</label>
-          <input onChange={newChangeHandler} name="name" type="text" value={NewAuthor.name}/>
-        </div>
-        <button>Add author</button>
-      </form>
+      <Form
+      submitHandler={newSubmitHandler}
+      buttonText="Add New Author"
+      author={NewAuthor}
+      setAuthor={setNewAuthor}
+      errors={errors}/>
     </div>
   )
 }

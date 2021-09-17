@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
+import DeleteAuthor from './DeleteAuthor';
 
 const AllAuthors = (props)=>{
 
@@ -24,10 +25,18 @@ const AllAuthors = (props)=>{
       </h1>
       {
         authorList.map((author,index)=>(
-          <div key={index}>
+          <div className="listItem "key={index}>
             <Link to={`/authors/${author._id}`}>
               <p>{author.name}</p>
             </Link>
+            <Link to={`/authors/edit/${author._id}`}>
+              Edit 
+            </Link>
+            <DeleteAuthor 
+            authorList = {authorList}
+            setAuthorList = {setAuthorList}
+            id={author._id}
+            />
           </div>
         ))
       }

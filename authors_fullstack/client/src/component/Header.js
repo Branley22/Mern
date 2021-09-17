@@ -7,7 +7,10 @@ const Header = (props)=>{
 
   return(
     <div>
-      Header
+      <ul>
+        <li><Link to="/authors">Home</Link></li>
+        <li><Link to="/authors/new">Add an author</Link></li>
+      </ul>
     </div>
   )
 }
