@@ -3,7 +3,7 @@ const Author = require("../models/author.model");
 module.exports = {
   //get all
   findAllAuthors: (req,res)=>{
-    Author.find({})
+    Author.find({}).sort({name: 1})
     .then((allAuthors)=>{
       res.json(allAuthors);
     })

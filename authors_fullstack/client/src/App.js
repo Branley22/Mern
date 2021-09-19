@@ -10,7 +10,7 @@ import EditAuthor from './component/EditAuthor';
 function App() {
   return (
     <div className="App">
-      <Header/>
+      {/* <Header/> */}
       <Router>
         <AllAuthors default path='/authors'/>
         <NewAuthor path='/authors/new/'/>

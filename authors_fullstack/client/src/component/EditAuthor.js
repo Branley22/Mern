@@ -37,12 +37,17 @@ const EditAuthor = (props)=>{
 
   return(
     <div>
+      <Header 
+      headerText='home'
+      headerPath={`/authors/`}/>
+      {/* <li><Link to="/authors">Home</Link></li> */}
       <Form
       submitHandler={editAuthorHandler}
       buttonText="Update Author"
       author={editedAuthor}
       setAuthor={setEditedAuthor}
-      errors={errors}/>
+      errors={errors}
+      />
     </div>
   )
 }

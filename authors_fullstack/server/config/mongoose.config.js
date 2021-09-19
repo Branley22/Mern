@@ -3,7 +3,7 @@ const dbName = "authors";
 
 mongoose.connect("mongodb://localhost/" + dbName,{
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 })
 
 .then(()=>{

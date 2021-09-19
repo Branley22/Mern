@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
 import DeleteAuthor from './DeleteAuthor';
+import Header from '../component/Header';
 
 const AllAuthors = (props)=>{
 
@@ -20,6 +21,9 @@ const AllAuthors = (props)=>{
 
   return(
     <div>
+      <Header 
+      headerText='add new author'
+      headerPath={`/authors/new/`}/>
       <h1>Favorite Authors</h1>
       <p style={{color:"purple"}}>We have quotes by:</p>
       <table>
@@ -31,8 +35,9 @@ const AllAuthors = (props)=>{
         </thead>
       </table>
       {
+        
         authorList.map((author,index)=>(
-          <div className="listItem "key={index}>
+          <div className="listItem"key={index}>
             <table>
               <thead>
                 <tr>

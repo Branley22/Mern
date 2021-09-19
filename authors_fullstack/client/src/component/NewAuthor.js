@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
 import Form from '../component/Form';
+import Header from '../component/Header';
 
 const NewAuthor = (props)=>{
 
@@ -28,6 +29,10 @@ const NewAuthor = (props)=>{
 
   return(
     <div>
+      <Header 
+      headerText='home'
+      headerPath={`/authors/`}/>
+      {/* <li><Link to="/authors">Home</Link></li> */}
       <Form
       submitHandler={newSubmitHandler}
       buttonText="Add New Author"

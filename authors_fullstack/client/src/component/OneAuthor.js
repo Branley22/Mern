@@ -22,6 +22,7 @@ const OneAuthor = (props)=>{
 
   return(
     <div>
+      {/* <li><Link to="/authors">Home</Link></li> */}
       <p>{oneAuthor.name}</p>
       <DeleteAuthor id={oneAuthor}/>
     </div>

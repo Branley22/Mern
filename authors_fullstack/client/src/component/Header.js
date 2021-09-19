@@ -4,13 +4,16 @@ import {Link, navigate} from '@reach/router';
 
 const Header = (props)=>{
 
+  const {headerText, headerPath} = props;
 
   return(
     <div>
-      <ul>
-        <li><Link to="/authors">Home</Link></li>
-        <li><Link to="/authors/new">Add an author</Link></li>
-      </ul>
+        {/* <li><Link to="/authors">Home</Link></li>
+        <li><Link to="/authors/new">Add an author</Link></li> */}
+        <Link to=
+        {headerPath}>
+        {headerText}
+        </Link>
     </div>
   )
 }
