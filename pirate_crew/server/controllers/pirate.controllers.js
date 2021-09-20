@@ -3,7 +3,7 @@ const Pirate = require('../models/pirate.model');
 module.exports = {
 
   findAllPirate:(req,res)=>{
-    Pirate.find({})
+    Pirate.find({}).sort({name: 1})
     .then((allPirates)=>{
       res.json(allPirates)
     })

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const PirateSchema = new mongoose.Schema({
   name: {
     type: String,
+    uppercase: true,
     required:[true, "A pirate name is required"],
     minlength: [3, "A pirate name must be atleast three characters long"]
   },
