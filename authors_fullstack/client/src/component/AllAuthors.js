@@ -21,9 +21,9 @@ const AllAuthors = (props)=>{
 
   return(
     <div>
-      <Header 
+      {/* <Header 
       headerText='add new author'
-      headerPath={`/authors/new/`}/>
+      headerPath={`/authors/new/`}/> */}
       <h1>Favorite Authors</h1>
       <p style={{color:"purple"}}>We have quotes by:</p>
       <table>

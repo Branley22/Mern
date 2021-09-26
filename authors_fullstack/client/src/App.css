@@ -43,3 +43,7 @@ th, td {
   text-align: left;
   border: .5px solid black;
 }
+
+.error-text {
+  color: red;
+}

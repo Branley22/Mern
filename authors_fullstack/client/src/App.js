@@ -6,13 +6,17 @@ import AllAuthors from './component/AllAuthors';
 import NewAuthor from  './component/NewAuthor';
 import OneAuthor from './component/OneAuthor';
 import EditAuthor from './component/EditAuthor';
+import Login from './component/Login';
+import LogReg from './views/LogReg';
 
 function App() {
   return (
     <div className="App">
-      {/* <Header/> */}
+      <Header/>
       <Router>
-        <AllAuthors default path='/authors'/>
+        <LogReg path="/"/>
+        <Login path="/login"/>
+        <AllAuthors default/>
         <NewAuthor path='/authors/new/'/>
         <OneAuthor path='/authors/:id'/>
         <EditAuthor path='/authors/edit/:id'/>

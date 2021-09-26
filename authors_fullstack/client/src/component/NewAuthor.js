@@ -29,9 +29,9 @@ const NewAuthor = (props)=>{
 
   return(
     <div>
-      <Header 
+      {/* <Header 
       headerText='home'
-      headerPath={`/authors/`}/>
+      headerPath={`/authors/`}/> */}
       {/* <li><Link to="/authors">Home</Link></li> */}
       <Form
       submitHandler={newSubmitHandler}

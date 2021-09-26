@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
   },
   email:{
     type: String,
-    required: [ture, "Email is required"]
+    required: [true, "Email is required"]
   },
   password:{
     type: String,
@@ -17,25 +17,30 @@ const UserSchema = new mongoose.Schema({
   },
 }, {timestamps: true})
 
-UserSchema.virtual('confirmPassword')
+
+
+UserSchema.virtual("confirmPassword")
 .get(()=> this._confirmPassword)
 .set((value)=> this._confirmPassword = value)
 
+
+
 UserSchema.pre("validate", function(next){
   console.log('in validate');
-  if(this.password !== confirmPassword){
-  this.invalidate("confirmPassword", "Password must match")
-  console.log("didn't match");
+
+  if(this.password !== this.confirmPassword){
+  this.invalidate("confirmPassword", "Password must match");
   }
+  console.log("didn't match");
   next();
 })
 
 UserSchema.pre("save",function(next){
   console.log("in pre save");
   bcrypt.hash(this.password, 10)
-  .then((hashPassword)=>{
+  .then((hashedPassword)=>{
     console.log("in hash");
-    this.password = hashPassword;
+    this.password = hashedPassword;
     next();
   })
 });
