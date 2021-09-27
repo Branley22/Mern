@@ -8,9 +8,8 @@ const Login = (props)=>{
   const [errorMessage, setErrorMessage] = useState("");
 
   // const handleChange = (e)=>{
-  //   setEmail, setPassword({
+  //   setEmail({
   //     ...email,
-  //     ...password,
   //     [e.target.name]: e.target.value
   //   })
   // }
@@ -18,8 +17,8 @@ const Login = (props)=>{
   const login = (e) =>{
     e.preventDefault();
     axios.post('http://localhost:8000/api/users/login',{
-    email: email,
-    password: password,
+      email: email,
+      password: password,
     },
     {
       withCredentials: true,
@@ -48,7 +47,7 @@ return(
           <span className="error-text">{errorMessage.email.message}</span>
           :null
         }
-        <input type="email" name="email" value={email.email}/>
+        <input type="email" name="email" value={email.email} onChange={(e)=> setEmail(e)}/>
       </div>
       <div>
         <label>Password</label>
@@ -57,7 +56,7 @@ return(
           <span className="error-text">{errorMessage.password.message}</span>
           :null
         }
-        <input type="password" name="password" value={password.password}/>
+        <input type="password" name="password" value={password.password} onChange={(e)=> setPassword(e)}/>
       </div>
       <button type="submit">Sign in</button>
     </form>
