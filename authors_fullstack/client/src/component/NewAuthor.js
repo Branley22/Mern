@@ -14,7 +14,10 @@ const NewAuthor = (props)=>{
   const newSubmitHandler = (e)=>{
     e.preventDefault();
     axios.post('http://localhost:8000/api/authors',
-    NewAuthor
+    NewAuthor,
+    {
+      withCredentials: true
+    }
     )
     .then((res)=>{
       console.log(res.data);
@@ -23,7 +26,13 @@ const NewAuthor = (props)=>{
     .catch((err)=>{
       console.log(err);
       console.log(err.response.data.errors);
-      setErrors(err.response.data.errors);
+      if(err.response.status === 401){
+        navigate("/");
+      }
+      if(err.response.data.errors){
+        setErrors(err.response.data.errors)
+      }
+      // setErrors(err.response.data.errors);
     })
   }
 

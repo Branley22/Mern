@@ -14,8 +14,8 @@ const Login = (props)=>{
   //   })
   // }
 
-  const login = (e) =>{
-    e.preventDefault();
+  const login = (event) =>{
+    event.preventDefault();
     axios.post('http://localhost:8000/api/users/login',{
       email: email,
       password: password,
@@ -42,26 +42,16 @@ return(
     <form onSubmit={login}>
       <div>
         <label>Email</label>
-        {
-          errorMessage.email?
-          <span className="error-text">{errorMessage.email.message}</span>
-          :null
-        }
-        <input type="email" name="email" value={email.email} onChange={(e)=> setEmail(e)}/>
+        <input type="text" name="email" value={email} onChange={(e)=> setEmail(e.target.value)}/>
       </div>
       <div>
         <label>Password</label>
-        {
-          errorMessage.password?
-          <span className="error-text">{errorMessage.password.message}</span>
-          :null
-        }
-        <input type="password" name="password" value={password.password} onChange={(e)=> setPassword(e)}/>
+        <input type="password" name="password" value={password.password} onChange={(e)=> setPassword(e.target.value)}/>
       </div>
       <button type="submit">Sign in</button>
     </form>
     </div>
-);
+  );
 };
 
 export default Login;
