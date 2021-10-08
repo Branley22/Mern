@@ -48,7 +48,22 @@ class SLL {
     return this.head.value;
     }
   }
-
+  // Display the values of all the nodes in the list
+  display() {
+    var listStr = ""; // Empty string that will contain the values of the list
+    if (this.head == null) {
+        return ""; // say "return 'Empty list'"
+    }
+    // We have at least one node
+    listStr += this.head.value; // Concatenates the first value in the list
+    // For the second node onwards, we'll add ", " + value;
+    var runner = this.head.next;
+    while (runner != null) {
+        listStr += ", " + runner.value; // Add the node's value to the list
+        runner = runner.next; // Move the runner to the next node
+    }
+    return listStr;
+  }
 }
 var mySLL = new SLL(); // no arugements passed in (line 17).... will start with empty list
 console.log(mySLL.front());
